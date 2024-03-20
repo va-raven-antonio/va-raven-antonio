@@ -1,4 +1,3 @@
-import 'package:myapp/myapp.dart' as myapp;
 import 'dart:io';
 void main(List<String> arguments) {
   practice1();
@@ -86,8 +85,4 @@ void practice1() {
   double result = distance/speed;
 
   print("The result is: $result");
-}
-
-void practice2(){
-  
 }
