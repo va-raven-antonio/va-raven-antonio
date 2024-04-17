@@ -1,8 +1,6 @@
-import 'dart:io';
 import 'dart:math';
 
-import 'package:test/test.dart';
-void main(List<String> arguments) {
+practice3(){
   getCube(2);
   print("The sum is ${add(5, 6)}");
   print("The division is ${div(1002, 3)}");
@@ -27,8 +25,8 @@ void getCube(double num1){
   print("the cube is: $result");
 }
 
-int add(int num1, int num2) => num1 + num2; 
-double div(int num1, int num2) => num1 / num2;
+int add(int num1, int num2) => num1 + num2; //get sum challenge using function
+double div(int num1, int num2) => num1 / num2; //get quotient challenge using function
 
 //1. Write a program in Dart to print your own name using function.
 String myName(String name) => name;
@@ -74,12 +72,13 @@ double getArea(radius, pi){
 
 //6. Write a program in Dart to reverse a String using function.
 void reverse(String str) {
-  String reverseMe="";
-  for(int x=str.length-1; x>=0; x--){
-    
-      reverseMe+=str[x];
+  String reverseString="";
+  for(int x=str.length-1; x>=0; x--){ //loop iterates over the elements of str in reverse order, starting from the last element (str.length - 1) and ending with the first element (0).
+      
+      reverseString+=str[x];
+  
   }
-  print("The reverse is: $reverseMe");
+  print("The reverse is: $reverseString");
 }
 
 //7. Write a program in Dart to calculate power of a certain number. For e.g 5^3=125

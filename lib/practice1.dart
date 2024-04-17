@@ -1,10 +1,9 @@
 import 'dart:io';
-void main(List<String> arguments) {
-  practice1();
-}
 
 void practice1() {
-  print("Raven"); //Write a program to print your name in Dart.
+  //1.Write a program to print your name.
+  print("Raven"); 
+  stdout.write("Raven");
 
   //2.Write a program to print Hello I am “John Doe” and Hello I’am “John Doe” with single and double quotes.
   print("Hello I am 'John Doe'");
@@ -18,6 +17,8 @@ void practice1() {
   int num2=10;
   int num3=15;
   double interest=(num1*num2*num3)/100;
+
+  print("The simple interest is: $interest");
 
   //5.Write a program to print a square of a number using user input.
   stdout.write("Enter number: ");
@@ -61,21 +62,21 @@ void practice1() {
   stdout.write("Enter a String number: ");
   String? strValue = stdin.readLineSync();
   print("Type of strvalue is ${strValue.runtimeType}");
-  int intValue = int.parse(strValue ?? "");
-  print("Type of invalue is ${intValue.runtimeType} \n");
+  int intValue = int.parse(strValue!);
+  print("Type of intvalue is ${intValue.runtimeType} \n");
 
 
   //11. Suppose, you often go to restaurant with friends and you have to split amount of bill. Write a program to calculate split amount of bill. Formula= (total bill amount) / number of people
-  double totalBill;
+  double totalAmountBill;
   int headCount;
   double splitAmount;
 
   stdout.write("Enter Total Amount: ");
-  totalBill = double.parse(stdin.readLineSync()!); 
+  totalAmountBill = double.parse(stdin.readLineSync()!); 
   stdout.write("Enter Number of People: ");
   headCount = int.parse(stdin.readLineSync()!);
 
-  splitAmount = totalBill/headCount;
+  splitAmount = totalAmountBill/headCount;
 
   print("Amount of bill each person: $splitAmount \n");
 

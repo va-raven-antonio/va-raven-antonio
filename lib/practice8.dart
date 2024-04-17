@@ -1,15 +1,11 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:async';
 import 'dart:io';
 
-import 'practice3.dart';
-
-
-void main(List<String> args) async{
-  getCurrentDate().then((value) => print(value));
+practice8() async {
+  await getCurrentDate().then((value) => print(value));
   csvReader();
-
-  print("");
-
   var f = firstWait();
   var s = secondWait();
   var t = thirdWait();
@@ -17,24 +13,12 @@ void main(List<String> args) async{
   print(await s);
   print(await t);
   print('done');
-
   print(await sumOfTwo(20, 25)); //sum of two numbers
-
-  print("");
-  print("The sum of two numbers from input is: ${getSum(2, 300)}");
-  print("");
-
-  displayNumbers();
-
-  print("");
-
-  userInputStrings();
-
-  print("");
-  getInput();
-  
+  print("The sum of two numbers from input is: ${await getTwoNum(0, 0)}");
+  await userInputStrings();
+  await displayNumbers();
+  await getInput();
 }
-
 //1. Explain what is asynchronous programming in dart?
 //answer: it is a process of something that is no need to wait the first process before the process for the second one
 // the process will do multiple tasks at the same time.
@@ -53,7 +37,7 @@ Future<String> getCurrentDate() async{
 
 //4. Write a program in dart that reads csv file and print it’s content.
 void csvReader(){
-  File file = File('students.csv');
+  File file = File('C:\\Users\\Raven Antonio\\Desktop\\Dart\\myapp\\lib\\students.csv');
   String content = file.readAsStringSync();
 
   print(content);
@@ -86,23 +70,24 @@ Future<int> getTwoNum(int num1, int num2) async {
   stdout.write("Enter first number: ");
   num1 = int.parse(stdin.readLineSync()!);
   stdout.write("Enter second number: ");
-  var sum = Future.delayed(Duration(seconds: 3), () => total = num1 + num2);
+  num2 = int.parse(stdin.readLineSync()!);
+  var sum = await Future.delayed(Duration(seconds: 3), () => total = num1 + num2);
 
   return sum;
 }
 
 
 //8. Write a Dart program that takes a list of strings as input, sorts the list asynchronously, and then prints the sorted list.
-Future<List<String>> sortStrings(List<String> strings) async{
+Future<List<String>> sortStrings(List<String> strings) async {
  strings.sort();
  return strings;
 }
 
-void userInputStrings() async {
+Future<void> userInputStrings() async {
    List<String> strings = [];
   for (var i = 0; i < 5; i++) {
     stdout.write("Enter strings 5 times: ");
-    String input = await stdin.readLineSync()!;
+    String input = stdin.readLineSync()!;
     strings.add(input);
   }
 
@@ -115,13 +100,14 @@ void userInputStrings() async {
 }
 
 //9. Write a Dart program that takes a list of integers as input, multiplies each integer by 2 asynchronously, and then prints the modified list.
-void userInput(List<int> numbers){
+Future<List<int>> userInput() async {
+  List<int> numbers = [];
   for (var i = 0; i < 5; i++) {
-    //get the user input to multiply
     stdout.write("Enter numbers to multiple by 2: ");
     int inputtedNumbers = int.parse(stdin.readLineSync()!);
     numbers.add(inputtedNumbers);
   }
+  return numbers;
 }
 
 Future<List<int>> doubleIntegers(List<int> numbers) async {
@@ -136,18 +122,15 @@ Future<List<int>> doubleIntegers(List<int> numbers) async {
   return doubledNumbers;
 }
 //display the doubled list the result for multiplied
-void displayNumbers() async{
-  List<int> numbers = [];
-  userInput(numbers); 
-  doubleIntegers(numbers);
+Future<void> displayNumbers() async {
+  List<int> numbers = await userInput();
+  await doubleIntegers(numbers);
 
   print("Original List: $numbers");
 
   List<int> doubledList = await doubleIntegers(numbers);
   print('Doubled list: $doubledList');
 }
-
-
 
 
 //10. Write a Dart program that takes a string as input, reverses the string asynchronously, and then prints the reversed string.
@@ -169,8 +152,8 @@ Future<String> reverseString(String input) {
   return completer.future;
 }
 
-void getInput() async {
-  stdout.write('Enter a string:');
+Future<void> getInput() async {
+  stdout.write('Enter a string: ');
   String input = await readInput(); // Wait for user input
   String reversedString = await reverseString(input); // Reverse the string
   print('Reversed string: $reversedString'); // Print the reversed strin

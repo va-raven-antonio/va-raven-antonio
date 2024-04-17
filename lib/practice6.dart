@@ -1,6 +1,6 @@
 import 'dart:io';
 
-void main(List<String> arguments){
+practice6(){
   Camera cam1 = Camera();
     cam1.name = "DSLR";
     cam1.color = "Black";
@@ -72,7 +72,7 @@ void main(List<String> arguments){
     print("");
     Quiz quiz = Quiz();
     quiz.getCurrentQuestion();
-} 
+}
 
 //First challenge in OOP sections Practice6
 class Book { //class

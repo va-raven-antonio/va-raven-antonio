@@ -1,5 +1,6 @@
 import 'dart:math';
-void main(List<String> args) {
+
+practice7(){
   lateVariables();
   nullableData();
   nullValue();

@@ -1,5 +1,6 @@
 import 'dart:io';
-void main(List<String> arguments) {
+
+practice5(){
   addName();
   appendNames();
   directory();
@@ -13,28 +14,28 @@ void main(List<String> arguments) {
 
 //1. Write a dart program to add your name to “hello.txt” file.
 addName(){
-  File file = File('hello.txt');
+  File file = File('C:\\Users\\Raven Antonio\\Desktop\\Dart\\myapp\\lib\\hello.txt');
   file.writeAsStringSync('Raven Antonio');
 }
 
 //2. Write a dart program to append your friends name to a file that already has your name.
 appendNames(){
-  File file = File('hello.txt');
+  File file = File('C:\\Users\\Raven Antonio\\Desktop\\Dart\\myapp\\lib\\hello.txt');
   file.writeAsStringSync('\nRaymark \nMark \nGray', mode: FileMode.append);
   print("Friends name successfully added!");
 }
 
 //3. Write a dart program to get the current working directory.
 directory(){
-  File file = File('hello.txt');
+  File file = File('C:\\Users\\Raven Antonio\\Desktop\\Dart\\myapp\\lib\\hello.txt');
   print('File current directory: ${file.absolute.path}');
 }
 
 
 //4. Write a dart program to copy the “hello.txt” file to “hello_copy.txt” file.
 copyFile(){
-  File file1 = File('hello.txt');
-  File file2 = File('hello_copy.txt');
+  File file1 = File('C:\\Users\\Raven Antonio\\Desktop\\Dart\\myapp\\lib\\hello.txt');
+  File file2 = File('C:\\Users\\Raven Antonio\\Desktop\\Dart\\myapp\\lib\\hello_copy.txt');
   String contents = file1.readAsStringSync();
 
   file2.writeAsStringSync(contents);
@@ -64,7 +65,7 @@ deleteFile(){
 
 //7. Write a dart program to store name, age, and address of students in a csv file and read it.
 students(){
-  File file = File('students.csv');
+  File file = File('C:\\Users\\Raven Antonio\\Desktop\\Dart\\myapp\\lib\\students.csv');
   file.writeAsStringSync('Name,Age,Address');
   for (var i = 0; i < 2; i++) {
     stdout.write("Enter name of student ${i + 1}: ");

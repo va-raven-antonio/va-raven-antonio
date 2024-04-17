@@ -1,15 +1,14 @@
 import 'dart:io';
 
-import 'practice3.dart';
-void main(List<String> arguments) {
-   printNames();
-   printFruits();
-   printTotal();
-   addDays();
-   friendNames();
-   mapInfo();
-   createMap();
-   toDo();
+practice4(){
+  printNames();
+  printFruits();
+  printTotal();
+  addDays();
+  friendNames();
+  mapInfo();
+  createMap();
+  toDo();
 }
 
 //1. Create a list of names and print all names using list.
@@ -57,6 +56,7 @@ printTotal(){
 
 //4. Create an empty list of type string called days. Use the add method to add names of 7 days and print all days.
 addDays(){
+  
   List<String> days = [];
   days.add("Monday");
   days.add("Tuesday");

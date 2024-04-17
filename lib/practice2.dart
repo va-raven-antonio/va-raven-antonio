@@ -1,7 +1,4 @@
 import 'dart:io';
-void main(List<String> arguments) {
-  practice2();
-}
 
 void practice2(){
   //1. Write a dart program to check if the number is odd or even.
@@ -14,11 +11,11 @@ void practice2(){
   }
 
   //2. Write a dart program to check whether a character is a vowel or consonant.
-  List<String> vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', "I", 'O', 'U'];
+  List<String> vowels = ['a', 'e', 'i', 'o'];
   stdout.write("Please enter a character: ");
-  String? getChar = stdin.readLineSync();
+  String? getChar = stdin.readLineSync()!;
 
-  if(vowels.contains(getChar)){
+  if(vowels.contains(getChar.toLowerCase())){
     print("You entered vowel. \n");
   } else {
     print("You entered consonant. \n");
@@ -41,7 +38,7 @@ void practice2(){
   }
 
   //4. Write a dart program to print your name 100 times.
-  for(int x = 1; x <= 100; x++) {
+  for(int x = 0; x <= 100; x++) {
     print("$x. Raven Antonio");
     if(x == 100) {
       print("");
@@ -49,13 +46,14 @@ void practice2(){
   }
   
   //5. Write a dart program to calculate the sum of natural numbers.
-  int total = 0;
+  int i = 1;
   int n = 100;
-  int i =1;
-
-  while(i<=n){
-    total = total + i;
-    i++;
+  int total = 0;
+  
+  while(i<=n){  // Start a loop that continues while `i` is less than or equal to `n`.
+    total = total + i; // Add the current value of `i` to the `total`.
+    i++;  // Increment the value of `i` by 1 for the next iteration.
+    print(total); 
   }
   
   print("Total is $total \n");
